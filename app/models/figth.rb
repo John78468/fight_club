@@ -1,0 +1,4 @@
+class Figth < ApplicationRecord
+  belongs_to :figth
+  belongs_to :user
+end
