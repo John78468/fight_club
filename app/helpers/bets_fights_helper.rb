@@ -1,0 +1,2 @@
+module BetsFightsHelper
+end
