@@ -4,7 +4,6 @@ class FightsController < ApplicationController
   end 
 
   def show
-    @fights = Figth.find(params[:id])
   end
 
   def new
@@ -21,12 +20,10 @@ class FightsController < ApplicationController
     end
   end
 
-  def edit
-    @fight = Figth.find(params[:id])
-  end
+
 
   def destroy 
-    @fight = Figth.find(params[:id])
+    @fight = Figth.find(product_params[:id])
     if @fight.delete
       puts "archive du combat detruite"
       redirect_to root_path
@@ -37,6 +34,6 @@ class FightsController < ApplicationController
   end
 
   def product_params
-    params.require(:fight).permit
+    params.require(:fight).permit(:name, :descripition, :date)
   end
 end
